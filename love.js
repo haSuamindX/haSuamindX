@@ -8,6 +8,8 @@ let sayYes = document.getElementById("sayYes")
 let body = document.querySelector("body")
 body.style.display ="none"
 
+
+
 let code = prompt("!!!Nhập vào mã bí mật!!!")
 
 
