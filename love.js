@@ -6,9 +6,12 @@ let year = date.getFullYear()
 let sayNo = document.getElementById("sayNo")
 let sayYes = document.getElementById("sayYes")
 let body = document.querySelector("body")
+body.style.display ="none"
+
 let code = prompt("!!!Nhập vào mã bí mật!!!")
 
-body.style.display ="none"
+
+
 if(code === "from mindX with love"){
     body.style.display = "block"
 }
