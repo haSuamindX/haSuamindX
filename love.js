@@ -1,6 +1,10 @@
 let date = new Date
 let day = date.getDate()
 let month = date.getMonth()
+let leftImg = "https://64.media.tumblr.com/8210fd413c5ce209678ef82d65731443/tumblr_mjphnqLpNy1s5jjtzo1_400.gifv"
+let rightImg = "https://i.pinimg.com/originals/ad/95/b0/ad95b0b5cc8d8ce4467d666c927b6a84.gif"
+let title = document.querySelector("h1")
+let propose = document.getElementById("propose")
 month +=1
 let year = date.getFullYear()
 let sayNo = document.getElementById("sayNo")
@@ -18,8 +22,11 @@ if(code === "from mindX with love"){
     body.style.display = "block"
 }
 
+let changeTitle = (text) => {
+    title.innerHTML = `<i class="fal fa-kiss-wink-heart"></i> ${text}  <i class="fal fa-kiss-wink-heart"></i>`
+}
 
-sayYes.addEventListener("click", () => {
+let leftImage = (link) => {
     Swal.fire({
         title: 'Cái đẹp không thể nào ghi hình, mà chỉ tồn tại trong đôi mắt kẻ si tình <3',
         text: `Ngày tình yêu bắt đầu: ${day} tháng ${month} năm ${year}` ,
@@ -30,14 +37,14 @@ sayYes.addEventListener("click", () => {
         background: ' rgb(255, 158, 158)',
         backdrop: `
           rgba(241, 237, 237,0.4)
-           url("https://64.media.tumblr.com/8210fd413c5ce209678ef82d65731443/tumblr_mjphnqLpNy1s5jjtzo1_400.gifv")
+           url(${link})
           left top
            no-repeat
         `
     })
-})
+}
 
-sayNo.addEventListener("click", () => {
+let rightImage = (link) => {
     Swal.fire({
         title: 'Vậy là, em làm vợ anh nhé!' ,
         text: `Ngày rước nàng về dinh: ${day} tháng ${month} năm ${year}` ,
@@ -48,26 +55,20 @@ sayNo.addEventListener("click", () => {
         background: ' rgb(255, 144, 144)',
         backdrop: `
           rgba(241, 237, 237,0.4)
-           url("https://i.pinimg.com/originals/ad/95/b0/ad95b0b5cc8d8ce4467d666c927b6a84.gif")
+           url(${link})
           right top
            no-repeat
         `
     })
+}
+
+sayYes.addEventListener("click", () => {
+    leftImage(leftImg)
+})
+
+sayNo.addEventListener("click", () => {
+    rightImage(rightImg)
 })
 
 
 
-//   Swal.fire({
-//     title: 'Custom width, padding, background.',
-//     width: 600,
-//     padding: '3em',
-//     background: '#fff url(https://i.pinimg.com/736x/12/f5/32/12f532e1b53f302c07404eee837721aa.jpg)',
-//     imageWidth: 162.5,
-//    imageHeight: 100,
-//     backdrop: `
-//       rgba(0,0,123,0.4)
-//       url("https://64.media.tumblr.com/8210fd413c5ce209678ef82d65731443/tumblr_mjphnqLpNy1s5jjtzo1_400.gifv")
-//       left top
-//       no-repeat
-//     `
-//   })
